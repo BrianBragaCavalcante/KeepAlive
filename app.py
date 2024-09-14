@@ -6,7 +6,7 @@ import json
 app = Flask(__name__)
 
 # Rename to this application link
-selfsite = 'https://keepalive.onrender.com/turnon'
+selfsite = 'https://keepalive-2hrf.onrender.com'
 
 with open('./sites.json', 'r') as file:
 	sites = dict(json.load(file))['sites']
@@ -21,7 +21,7 @@ def index():
 @app.route('/turnon')
 def turn_on():
 	time.sleep(5 * 60)
-	requests.get(selfsite)
+	requests.get(selfsite+'/turnon')
 
 if __name__ == '__main__':
 	app.run()
