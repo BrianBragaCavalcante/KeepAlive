@@ -21,6 +21,7 @@ def index():
 @app.route('/turnon')
 def turn_on():
 	time.sleep(5 * 60)
+	requests.get(selfsite)
 	requests.get(selfsite+'/turnon')
 
 if __name__ == '__main__':
